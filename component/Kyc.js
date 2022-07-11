@@ -1,4 +1,4 @@
-import {View,Text,StyleSheet,Image} from 'react-native';
+import {View,Text,StyleSheet,Image,Dimensions} from 'react-native';
 
 
 function Kyc(){
@@ -21,10 +21,11 @@ function Kyc(){
 };
 
 export default Kyc;
+const deviceWidth= Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     kycDetail:{
-        width:350,
+        width:deviceWidth<380 ?330 :350,
         height:80,
         backgroundColor:'#FFF4F4',
         borderColor:'#DD5B5B',
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
         width:35,
         height:35,
         marginVertical:22,
-        marginLeft:24
+        marginLeft:deviceWidth<380 ? 10 :24
 
     },
     text:{

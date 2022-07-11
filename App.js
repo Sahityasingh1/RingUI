@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet,View, ScrollView,Dimensions } from 'react-native';
 import Header from './component/Header';
 import Card from './component/card';
 import Kyc from './component/Kyc';
@@ -11,13 +11,19 @@ import Button from './component/Button';
 
 
 
+
 export default function App() {
   return (
     <View style={styles.container}>
     <StatusBar style="auto" />
     <Header/>
+    
     <ScrollView>
     <Card/>
+    
+   
+
+    
     <Kyc/>
     <Pending/>
     <Recent/>
@@ -30,11 +36,11 @@ export default function App() {
     </View>
   );
 }
-
+const deviceWidth = Dimensions.get('window').width
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop:50,
+    marginTop:deviceWidth<380 ? 40 : 50,
   },
   
 });
